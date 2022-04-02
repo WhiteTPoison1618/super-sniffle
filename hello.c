@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<conio.h>
 
-main ()
+int main()
 {
-
-    printf("Hello ! ")
-
+clrscr();   
+printf("Hello World!");
+    
 }
