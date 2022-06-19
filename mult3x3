@@ -1,0 +1,47 @@
+#include<stdio.h>
+//Multiplies two 3x3 matrices
+void main()
+{
+    int mat1[3][3],mat2[3][3];
+    float mult[3][3];
+    int i,j;
+    printf("Please enter elements for first matrix:-");
+    for(i=0;i<3;++i)
+    {
+        for(j=0;j<3;++j)
+        {
+            printf("\nElement (%d,%d):- ",i+1,j+1);
+            scanf("%d",&mat1[i][j]);
+        }
+        printf("\n");
+    }
+    
+    printf("Please enter elements for second matrix:-");
+     for(i=0;i<3;++i)
+    {
+        for(j=0;j<3;++j)
+        {
+            printf("\nElement (%d,%d):- ",i+1,j+1);
+            scanf("%d",&mat2[i][j]);
+        }
+        printf("\n");
+    }
+    
+     for(i=0;i<3;++i)
+    {
+        for(j=0;j<3;++j)
+        {
+            mult[i][j] = mult[i][j]+ (mat1[i][j]*mat2[i][j]);
+        }
+    }
+    
+    printf("\nMultiplication of matrices is:-");
+    
+    for(i=0;i<3;++i)
+    {
+        for(j=0;j<3;++j)
+        {
+            printf("\n%f",mult[i][j]);
+        }
+    }
+} 
