@@ -45,17 +45,30 @@ int underflow(struct node *a)
 
 struct node *push(struct node *a, int val)
 {
-    if (!overflow(a))
+    if (overflow(a))
     {
-        struct node *head;
-        head = dma();
-        head->n = val;
-        head->size = a->size - 1;
-        head->ptr = a;
-        return head;
+        printf("stack overflow\n");
+        return a;
     }
-    printf("stack overflow");
-    return a;
+    struct node *head;
+    head = dma();
+    head->n = val;
+    head->size = a->size - 1;
+    head->ptr = a;
+    return head;
+}
+
+//some sort of error in pop future me plz get rid of it
+struct node *pop(struct node *a)
+{
+    if (underflow(a))
+    {
+        printf("stack underflow\n");
+        return a;
+    }
+    struct node *head=a->ptr;
+    printf("deleted %d",a->n);free(a);
+    return head;
 }
 
 int main()
@@ -69,7 +82,9 @@ int main()
     head = push(head, 30);
     head = push(head, 40);
     head = push(head, 50);
-    traversal(head);
     head = push(head, 60);
+    traversal(head);
+    head=pop(head);
+    traversal(head);
     return 0;
 }
