@@ -38,7 +38,10 @@ if (isempty(a)){
     return head;
 }
 printf("stack overflow");
+return a;
 }
+
+
 
 int main (){
     struct node *head;
