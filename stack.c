@@ -21,6 +21,13 @@ struct node *a;
 a=(struct node*)malloc(sizeof(struct node));
 }
 
+int isempty(struct node *a){
+    if (a->size==1){
+        return 1;
+    }
+    return 0;
+}
+
 struct node *push(struct node *a,int val){
 
 }
