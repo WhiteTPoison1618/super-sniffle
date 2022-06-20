@@ -2,10 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.exe
 # C extensions
 *.so
-
+*.exe 
 # Distribution / packaging
 .Python
 build/
@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# coderunner junk
+tempCodeRunnerFile.c
