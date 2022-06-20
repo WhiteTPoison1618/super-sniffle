@@ -23,23 +23,34 @@ a=(struct node*)malloc(sizeof(struct node));
 
 int isempty(struct node *a){
     if (a->size==1){
-        return 1;
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 struct node *push(struct node *a,int val){
-
+if (isempty(a)){
+    struct node *head;
+    head=dma();
+    head->n=val;
+    head->size=a->size-1;
+    head->ptr=a;
+    return head;
+}
+printf("stack overflow");
 }
 
 int main (){
-    struct node *head,*body;
+    struct node *head;
     head=(struct node*)malloc(sizeof(struct node));
-    body=dma();
     head->n=10;
-    head->ptr=body;
-    body->n=20;
-    body->ptr=NULL;
+    head->size=5;
+    head->ptr=NULL;
+    head=push(head,20);
+    head=push(head,30);
+    head=push(head,40);
+    head=push(head,50);
     traversal(head);
+    head=push(head,60);
     return 0;
 }
